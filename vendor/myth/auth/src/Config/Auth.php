@@ -114,6 +114,7 @@ class Auth extends BaseConfig
     // with a special link he have to confirm to activate his account.
     //
     public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
+    // public $requireActivation = false;
 
     //--------------------------------------------------------------------
     // Allow to reset password via email
@@ -121,6 +122,7 @@ class Auth extends BaseConfig
     // When enabled, every user will have the option to reset his password
     // via specified resetter. Default setting is email.
     //
+    // public $activeResetter = false;
     public $activeResetter = 'Myth\Auth\Authentication\Resetters\EmailResetter';
 
     //--------------------------------------------------------------------
@@ -132,7 +134,7 @@ class Auth extends BaseConfig
     // you might not want the extra risk associated with this cookie-based
     // solution.
     //
-    public $allowRemembering = false;
+    public $allowRemembering = true;
 
     //--------------------------------------------------------------------
     // Remember Length
@@ -140,7 +142,7 @@ class Auth extends BaseConfig
     // The amount of time, in seconds, that you want a login to last for.
     // Defaults to 30 days.
     //
-    public $rememberLength = 30 * DAY;
+    public $rememberLength = 1 * DAY;
 
     //--------------------------------------------------------------------
     // Error handling

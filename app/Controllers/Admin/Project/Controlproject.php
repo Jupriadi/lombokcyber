@@ -21,7 +21,8 @@ class Controlproject extends BaseController
             if($post == 'daftar')continue;
             $data[$post] = htmlspecialchars($value);
         endforeach;
-		// dd($photo);
+        $data['penulisProject'] = user()->id;
+
 
 		if(!($id == false)):
             $data['idProject'] = $id;
@@ -47,6 +48,8 @@ class Controlproject extends BaseController
             endif;
 
         endif;
+
+        // dd($data);
 
 		$simpan = $this->project->save($data);        
 		session()->setFlashdata('saved','Project Berhasil Disimpan..!');

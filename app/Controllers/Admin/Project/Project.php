@@ -10,13 +10,22 @@ class Project extends BaseController
 {
 	public function index()
 	{
-		// $faker = \Faker\Factory::create('id_ID');
-
-		// dd($faker->sentence(6));
+		$key = $this->request->getVar('q');
+		if($key==null):
+			$project = $this->project->getProject();
+		else:
+			$project = $this->project->cariProject($key);
+		endif;
+		if(!(user()->status=="admin")):
+			$getproject= $project->where('penulisProject', user()->id);
+		else:
+			$getproject =$project;
+		endif;
+		
 		$data=[
 			'title' => 'Project',
-			'subtitle' => '',
-			'projects' => $this->project->getProject(),
+			'subtitle' => 'Karya Anda',
+			'projects' => $getproject->paginate(8),
 			'pager' =>$this->project->pager,
 		];
 

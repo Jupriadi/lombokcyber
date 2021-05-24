@@ -29,6 +29,23 @@
 
             <div class="card shadow-sm">
                 <div class="card-header">
+                    <h4>Icon Top Bar</h4>
+                </div>
+                <div class="card-body"> 
+                    <div class="logo-box mx-auto" style="width:150px">
+                        
+                        <label for="logo" class="form-label logoLabel d-none"></label>
+                        <div class="fileUpload" width="80%;overflow:hidden;">
+                            <input class="upload" style="height:100%" type="file" onchange="previewicontopbar()" id="icontopbar" name="icontopbar">
+                            <img src="/assets/img/<?= $profil['logoTopbar'] ?>" class="img-thumbnail preview-icontopbar img-fluid" style="width:100%" alt="Logo">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header">
                     <h4>Kontak Organisasi</h4>
                 </div>
                 <div class="card-body">

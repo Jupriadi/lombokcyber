@@ -8,31 +8,37 @@ class Kelas extends BaseController
 {
 	public function index($id=false)
 	{
-		// $faker = \Faker\Factory::create('id_ID');
-		// dd($faker->company(10, true)." sebagai ".$faker->jobTitle());
+		
 		$key = $this->request->getVar('q');
-		// dd($key);
+
 		if($key==null):
-			// dd("tidak dalam pencarian");
-			$getKelas = $this->kelas->getKelas();
+			$kelas = $this->kelas->getKelas();
 		else:
-			$getKelas = $this->kelas->getKelas($key);
+			$kelas = $this->kelas->cariKelas($key);
 		endif;
+		
+
+		if(!(user()->status=="admin")):
+			$getKelas= $kelas->where('mentor', user()->id);
+		else:
+			$getKelas =$kelas;
+		endif;
+
 		$data=[
 			'title' => 'Kelas Belajar',
 			'subtitle' => 'Daftar Kelas Belajar',
-			'members' => $this->member->findAll(),
+			'members' => $this->user->where('active',1)->findAll(),
 		];
 
 		if(!($id==false)):
-			$find=$this->kelas->getById($id);
+			$find=$this->kelas->getKelas($id);
 			$data['kelas'] = $find;
 			$data['title'] = $find['namaKelas'];
-			$data['subtitle'] = $find['namaPengguna'];
+			// $data['subtitle'] = $find['username'];
 			$data['materi'] = $this->materi->getMateriByKelasId($id);
 			return view("/pages/admin/kelas/detailkelas",$data);
 		else:
-			$data['kelas'] = $getKelas;
+			$data['kelas'] = $getKelas->paginate(8);
 			$data['pager']= $this->kelas->pager;
 			return view("/pages/admin/kelas/kelas",$data);
 		endif;

@@ -25,8 +25,16 @@ class ProjectModels extends Model
 	protected $createdField         = 'tglPublishProject';
 	protected $updatedField         = 'tglUpdateProject';
 
-	public function getProject()
+	public function getProject($id=false)
 	{
-		return $this->orderBy('idProject', 'DESC')->paginate(8);
+		if($id==false):
+			return $this->join('users','users.id = project.penulisProject')->orderBy('idProject', 'DESC');
+		else:
+			return $this->join('users','users.id = project.penulisProject')->find($id);
+		endif;
+	}
+	public function cariProject($key)
+	{
+		return $this->like('judulProject', $key)->join('users','users.id = project.penulisProject');
 	}
 }

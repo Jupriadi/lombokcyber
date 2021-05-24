@@ -2,9 +2,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-purple fixed-top">
   <div class="container">
     <a class="navbar-brand" href="/"> 
-      <img src="/assets/icon.png" alt="" srcset=""> 
+      <img style="height:30px" src="/assets/img/<?= $profil['logoTopbar'] ?>" alt="" srcset=""> 
       <span>
-        RINJANI<strong>DEV</strong>
       </span>
     </a>
     <button class="navbar-toggler p-0" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +31,7 @@
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Freelancer</a>
         </li>
         <li class="nav-item">
-          <button class="nav-link btn btn-light text-dark ms-md-4" aria-current="page" href="#">Login</button>
+          <!-- <button class="nav-link btn btn-light text-dark ms-md-4" aria-current="page" href="#login" class="tblogin">Login</button> -->
         </li>
         <li class="nav-item ms-md-4" data-bs-toggle="modal" data-bs-target="#cari">
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">

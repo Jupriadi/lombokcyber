@@ -14,6 +14,8 @@ use App\Models\KelasModels;
 use App\Models\MemberModels;
 use App\Models\MateriModels;
 use App\Models\ModulModels;
+use App\Models\ArtikelModel;
+use App\Models\UserModels;
 /**
  * Class BaseController
  *
@@ -41,6 +43,8 @@ class BaseController extends Controller
 	protected $member;
 	protected $materi;
 	protected $modul;
+	protected $artikel;
+	protected $user;
 
 	public function __construct()
 	{
@@ -50,6 +54,8 @@ class BaseController extends Controller
 		$this->member = new MemberModels ;
 		$this->materi = new MateriModels ;
 		$this->modul = new ModulModels ;
+		$this->artikel = new ArtikelModel ;
+		$this->user = new UserModels ;
 	}
 
 	/**

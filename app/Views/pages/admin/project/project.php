@@ -6,14 +6,12 @@
 </script>
 <div class="px-4">
     <div class="row">
-        <div class="col-7">
-            <form action="" method="get" class="position-relative">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">
-                        <i data-feather="search"></i>
-                    </span>
-                    <input type="text" class="form-control p-2" placeholder="Kata Kunci Pencarian" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
+        <div class="col-7 position-relative">
+            <form action="" method="get">
+                <input placeholder="Kata Kunci Pencarian" type="text" class="rounded-pill px-3 py-2 shadow-sm form-control" name="q">
+                <span class="position-absolute top-0 end-0 mt-2 mr-4">
+                    <i class="bi bi-search"></i>
+                </span>
             </form>
         </div>
         <div class="col-5 justify-content-right text-right">
@@ -21,6 +19,12 @@
         </div>
     </div>
     <div class="row">
+        <?php if($projects == null) : ?>
+            <div class="text-center mt-5 py-5 bg-white">
+                <img src="/assets/img/empty.gif" style="width:150px" alt="">
+                <h3>Tidak Ada Project untuk Ditampilkan</h3>
+            </div>
+        <?php endif; ?>
         <?php foreach($projects as $pro): ?>
         <div class="col-md-3 mt-3 mt-md-5">
             <div class="card h-100">
@@ -28,7 +32,10 @@
                     <img src="/assets/img/project_thumbnail/<?= $pro['thumbnailProject'] ?>" class="h-100" alt="Project Thumbnail">
                 </div>
                 <div class="card-body">
-                    <div class="c"><?= $pro['judulProject'] ?></div>
+                    <div class="fs-1"><?= $pro['judulProject'] ?></div>
+                    <div class="my-2">
+                        <small><i class="bi bi-person-fill"></i> <?= $pro['username'] ?></small>
+                    </div>
                     <small class="position-absolute bottom-0 mb-2 end-0 mr-3">
                         <a data-id="<?= $pro['idProject'] ?>" href="#confirmhapus" data-toggle="modal" class="hapusproject btn bg-warning text-black btn-sm"> <i data-feather="trash"></i> </a>
                         <a href="/admin/project/formproject/<?= $pro['idProject'] ?>" class="btn btn-primary btn-sm"> <i data-feather="edit"></i> </a>

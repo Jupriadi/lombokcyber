@@ -27,6 +27,19 @@
 
             <div class="card shadow-sm">
                 <div class="card-header">
+                    <h4>Icon Top Bar</h4>
+                </div>
+
+                <div class="card-body">
+                    <div class="logo-topbar-box mx-auto" style="width:150px">
+                        <img height="50px" src="/assets/img/<?= $profil['logoTopbar'] ?>" alt="">
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header">
                     <h4>Kontak Sekolah</h4>
                 </div>
                 <div class="card-body">

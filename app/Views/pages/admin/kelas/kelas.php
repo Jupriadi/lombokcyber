@@ -23,7 +23,10 @@
     </div>
     <div class="row mt-3">
         <?php if($kelas==null): ?>
-            <h2>Tidak Ada Kelas Untuk Ditampilkan</h2>
+            <div class="text-center mt-5 py-5 bg-white">
+                <img src="/assets/img/empty.gif" style="width:150px" alt="">
+                <h3>Tidak Ada Kelas untuk Ditampilkan</h3>
+            </div>
         <?php endif ?>
         <?php 
             foreach($kelas as $kel): 
@@ -52,7 +55,7 @@
                         <div class="">
                             <small class="text-secondary">
                                 <i class="bi bi-person-fill"></i>
-                                <?= $kel['mentor'] ?>
+                                <?= $kel['username'] ?>
                             </small> 
                         </div>
                     </div>
@@ -109,12 +112,17 @@
                            </div>
                            <div class="form-group">
                                <label for="">Mentor Kelas</label>
-                               <select class="form-select" name="mentor" id="">
-                                   <option value="-">-- Pilih Mentor</option>
-                                   <?php foreach($members as $mentor): ?>
-                                        <option value="<?= $mentor['idPengguna'] ?>"><?= $mentor['namaPengguna'] ?></option>
-                                    <?php endforeach ?>
-                               </select>
+                               <?php if(user()->status == "admin") : ?>
+                                    <select class="form-select" name="mentor" id="">
+                                        <option value="-">-- Pilih Mentor</option>
+                                        <?php foreach($members as $mentor): ?>
+                                            <option value="<?= $mentor['id'] ?>"><?= $mentor['username'] ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                               <?php else: ?>
+                                    <input type="text" value="<?= user()->username." - ".user()->email ?>" class="form-control rounded-pill" readonly>
+                                    <input name="mentor" value="<?= user()->id ?>" type="hidden">
+                               <?php endif; ?>
                            </div>
                         </div>
                         <div class="col-md-5">

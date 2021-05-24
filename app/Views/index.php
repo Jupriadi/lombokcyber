@@ -7,8 +7,10 @@
         <div class="row hg-100">
             <div class="col-md-6">
                 <div class="text-box position-absolute p-5 top-50 translate-middle-y text-center text-md-start">
-                    <span class="fs-1">RINJANI DEV</span><br>
-                    Mulai Personal Brandingmu, dengan publish karyamu <strong>Rinjani Dev</strong><br>
+                    <span class="fs-1"><?= $profil['namaOrganisasi'] ?></span><br>
+                    
+                        <?= $profil['selogan'] ?>
+                    <br>
                     <button  class="btn btn-lg btn-outline-light mt-5" data-bs-toggle="modal" data-bs-target="#daftar">
                         Daftar Sekarang <i class="bi bi-arrow-right-circle-fill"></i>
                     </button>
@@ -202,7 +204,7 @@
     </div>
 </section>
 <script>
-     $(".navbar").removeClass("bg-purple");
+    $(".navbar").removeClass("bg-purple");
     $(".navbar").addClass("bg-transparent");
     $( window ).scroll( function () {
        

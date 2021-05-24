@@ -29,6 +29,26 @@ $routes->setAutoRoute(true);
  * Route Definitions
  * --------------------------------------------------------------------
  */
+$routes->group('', ['namespace' => 'Myth\Auth\Controllers'], function($routes) {
+    // Login/out
+    $routes->get('login', 'AuthController::login', ['as' => 'login']);
+    $routes->post('login', 'AuthController::attemptLogin');
+    $routes->get('logout', 'AuthController::logout');
+
+    // Registration
+    $routes->get('register', 'AuthController::register', ['as' => 'register']);
+    $routes->post('register', 'AuthController::attemptRegister');
+
+    // Activation
+    $routes->get('activate-account', 'AuthController::activateAccount', ['as' => 'activate-account']);
+    $routes->get('resend-activate-account', 'AuthController::resendActivateAccount', ['as' => 'resend-activate-account']);
+
+    // Forgot/Resets
+    $routes->get('forgot', 'AuthController::forgotPassword', ['as' => 'forgot']);
+    $routes->post('forgot', 'AuthController::attemptForgot');
+    $routes->get('reset-password', 'AuthController::resetPassword', ['as' => 'reset-password']);
+    $routes->post('reset-password', 'AuthController::attemptReset');
+});
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
@@ -46,6 +66,12 @@ $routes->get('/admin/kelas', 'Admin\Kelas\Kelas::index');
 $routes->get('/admin/kelas/(:num)', 'Admin\Kelas\Kelas::index/$1');
 $routes->add('/admin/controlkelas/(:any)','Admin\Kelas\Controlkelas::$1');
 $routes->add('/admin/controlmateri/(:any)','Admin\Kelas\Controlmateri::$1');
+$routes->get('/admin/artikel', 'Admin\Artikel\Artikel::index');
+$routes->get('/admin/artikel/(:any)', 'Admin\Artikel\Artikel::$1');
+$routes->add('/admin/controlartikel/(:any)','Admin\Artikel\Controlartikel::$1');
+$routes->get('/admin/akun', 'Admin\Akun\Akun::index');
+$routes->get('/admin/akun/(:any)', 'Admin\Akun\Akun::$1');
+$routes->add('/admin/controlakun/(:any)','Admin\Akun\Controlakun::$1');
 
 /*
  * --------------------------------------------------------------------

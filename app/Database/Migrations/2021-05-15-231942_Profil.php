@@ -66,6 +66,10 @@ class Profil extends Migration
 				'type'              => 'varchar',
                 'constraint'        => '100',
 			],
+			'logoTopbar' => [
+				'type'              => 'varchar',
+                'constraint'        => '100',
+			],
 
 			'tglDaftar' => [
 					'type' => 'DATETIME',

@@ -74,10 +74,12 @@
                     </div>
                     <div class="col">
                         <strong>
-                            <?= $kelas['namaDepan']." ".$kelas['namaBelakang'] ?>
+                            <?= $kelas['username'] ?>
                         </strong><br>
                         <i>
-                            <?= $kelas['posisi']." at ".$kelas['komunitas'] ?>
+                            <?=
+                                $kelas['posisi']." at ".$kelas['komunitas'] 
+                            ?>
                         </i>
                     </div>
                 </div>

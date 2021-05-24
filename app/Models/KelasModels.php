@@ -28,18 +28,18 @@ class KelasModels extends Model
 	protected $updatedField         = 'tglUbahKelas';
 
 
-	public function getKelas($key=false)
+	public function getKelas($id=false)
 	{
-		if(!($key==false)):
-			return $this->like('namaKelas', $key)->paginate(8);
+		if(!($id==false)):
+			return $this->find($id);
 		else:
-			return $this->orderBy('tglBuatKelas', 'DESC')->paginate(8);
+			return $this->join('users','users.id = kelas.mentor')->orderBy('tglBuatKelas', 'DESC');
 		endif;
 	}
 
-	public function getById($id)
+	public function cariKelas($key)
 	{
-		return $this->join('pengguna','pengguna.idPengguna = kelas.mentor')->where('idKelas',$id)->first();
+		return $this->join('users','users.id = kelas.mentor')->like('namaKelas', $key)->orderBy('tglBuatKelas', 'DESC');
 	}
 
 	public function getMateri($idKelas)

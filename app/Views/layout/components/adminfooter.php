@@ -87,6 +87,21 @@
                     prev.src = e.target.result;
                 }
       };
+
+        function previewicontopbar(){
+                const logo = document.querySelector('#icontopbar');
+                const label = document.querySelector('.logoLabel');
+                const prev = document.querySelector('.preview-icontopbar');
+
+                label.textContent = logo.files[0].name;
+
+                const filePhoto = new FileReader(); 
+                filePhoto.readAsDataURL(logo.files[0]);
+
+                filePhoto.onload = function(e){
+                    prev.src = e.target.result;
+                }
+      };
     </script>
 </body>
 </html>

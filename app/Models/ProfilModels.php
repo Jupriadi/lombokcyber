@@ -27,6 +27,7 @@ class ProfilModels extends Model
 			'desa',
 			'sekretariat',
 			'logo',
+			'logoTopbar',
 			'tglDaftar',
 			'tglUbah',
 	];

@@ -6,7 +6,9 @@
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
-                            <li class='sidebar-title'>Main Menu</li>
+                        <li class='sidebar-title'>Main Menu</li>
+
+                        <?php if(user()->status == 'admin'): ?>
                             <li class="sidebar-item " id="dashboard">
                                 <a href="/admin" class='sidebar-link'>
                                     <i data-feather="home" width="20"></i> 
@@ -14,6 +16,23 @@
                                 </a>
                                 
                             </li>
+                            <li class="sidebar-item has-sub" id="akun">
+                                <a href="/admin/akun" class='sidebar-link'>
+                                    <i data-feather="users" width="20"></i>
+                                    <span>Akun Pengguna</span>
+                                </a>
+
+                                <ul class="submenu">
+                                    
+                                    <li>
+                                        <a class="sidebar-item" href="/admin/akun">Semua Pengguna</a>
+                                        <a href="/admin/akun/mentor">Mentor</a>
+                                        <a href="/admin/akun/siswa">Siswa</a>
+                                    </li>
+                                    
+                                </ul>   
+                            </li>
+
                             <li class="sidebar-item " id="profil">
                                 <a href="/admin/profil" class='sidebar-link'>
                                     <i data-feather="aperture" width="20"></i> 
@@ -21,6 +40,8 @@
                                 </a>
                                 
                             </li>
+
+                            <?php endif; ?>
                             <li class="sidebar-item " id="project">
                                 <a href="/admin/project" class='sidebar-link'>
                                     <i data-feather="activity" width="20"></i> 
@@ -34,7 +55,14 @@
                                     <span>Kelas Belajar</span>
                                 </a>
                             </li>
+                            <li class="sidebar-item " id="artikel">
+                                <a href="/admin/artikel" class='sidebar-link'>
+                                    <i data-feather="layout" width="20"></i>
+                                    <span>Artikel</span>
+                                </a>
+                            </li>
 
+<!-- 
                             <li class="sidebar-item  has-sub">
                                 <a href="#" class='sidebar-link'>
                                     <i data-feather="triangle" width="20"></i> 
@@ -326,7 +354,7 @@
                             </li>
 
                         
-                        
+                         -->
                     
                     </ul>
                 </div>

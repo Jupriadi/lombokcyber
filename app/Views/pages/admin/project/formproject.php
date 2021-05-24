@@ -16,7 +16,7 @@
                         <div class="p-3 mt-3">
                             <label for=""><strong>Kategory</strong></label><br>
                             <small>contoh Penulisan Kategori: <br> #program #micro_controller</small>
-                            <textarea name="kategoryProject" id="" class="form-control"><?= $edit>0 ? $project['isiProject'] : old('kategoryProject') ;?></textarea>
+                            <textarea name="kategoryProject" id="" class="form-control"><?= $edit>0 ? $project['kategoryProject'] : old('kategoryProject') ;?></textarea>
                         </div>
                     </div>
                 </div>                
@@ -31,7 +31,12 @@
                         <div >
                             <textarea  id="ckeditor" name="isiProject" rows="5"><?= $edit>0 ? $project['isiProject'] : old('isiProject') ;?></textarea>
                         </div>
+                        <div class="mt-3">
+                            <h4 class="card-title mt-4">Penulis</h4>
+                            <input type="text" value="<?= user()->username." - ".user()->email ?>" class="form-control rounded-pill pl-4" readonly>
+                        </div>
                     </div>
+        
                     <div class="px-4 pb-4">
                         <button type="submit" class="btn btn-primary">Simpan</button>
                         <a href="/admin/project" class="ml-4"> Batal</a>
