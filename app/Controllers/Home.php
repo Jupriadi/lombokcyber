@@ -30,6 +30,7 @@ class Home extends BaseController
 			return view('/pages/user/project/index',$data);
 		else:
 			$data['project']=$this->project->getBySlug($slug);
+			$data['projectlain']=$this->project->paginate($slug);
 			return view('/pages/user/project/index',$data);
 		endif;
 		
