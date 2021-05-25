@@ -16,12 +16,14 @@ class Controlproject extends BaseController
 		$data=[];
 		$posts = $this->request->getPost();
         $photo = $this->request->getFile('thumbnail');
-
+        $judul = $this->request->getPost('judulProject');
+        $data['slugProject'] = url_title($judul, '-', TRUE);
 		foreach($posts as $post => $value):
-            if($post == 'daftar')continue;
+            if($post == 'isiProject')continue;
             $data[$post] = htmlspecialchars($value);
         endforeach;
         $data['penulisProject'] = user()->id;
+        $data['isiProject'] = $this->request->getPost('isiProject');
 
 
 		if(!($id == false)):

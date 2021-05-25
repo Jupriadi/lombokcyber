@@ -55,7 +55,7 @@ $routes->group('', ['namespace' => 'Myth\Auth\Controllers'], function($routes) {
 // admin routes
 $routes->get('/', 'Home::index');
 $routes->get('/admin', 'Admin\Admin::index');
-$routes->get('/(:segment)', 'Home::$1');
+$routes->get('/(:any)', 'Home::$1');
 $routes->get('/admin/project', 'Admin\Project\Project::index');
 $routes->get('/admin/project/(:any)', 'Admin\Project\Project::$1');
 $routes->add('/admin/controlproject/(:any)','Admin\Project\Controlproject::$1');
@@ -73,6 +73,10 @@ $routes->get('/admin/akun', 'Admin\Akun\Akun::index');
 $routes->get('/admin/akun/(:any)', 'Admin\Akun\Akun::$1');
 $routes->add('/admin/controlakun/(:any)','Admin\Akun\Controlakun::$1');
 
+
+// user routes
+
+// $routes->get('/project', 'Home::project');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

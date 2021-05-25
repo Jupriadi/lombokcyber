@@ -12,6 +12,7 @@ class ProjectModels extends Model
 	protected $allowedFields        = [
 					'penulisProject',
 					'judulProject',
+					'slugProject',
 					'isiProject',
 					'kategoryProject',
 					'thumbnailProject',
@@ -32,6 +33,10 @@ class ProjectModels extends Model
 		else:
 			return $this->join('users','users.id = project.penulisProject')->find($id);
 		endif;
+	}
+	public function getBySlug($slug)
+	{
+		return $this->join('users','users.id = project.penulisProject')->where('slugProject', $slug)->first();
 	}
 	public function cariProject($key)
 	{

@@ -19,44 +19,23 @@
                 <div class="card shadow-sm">
                     <div class="card-header bg-white">
                         <div class="konten-thumbnail overflow-hidden position-relative">
-                            <img src="/assets/img/project_thumbnail/project.jpg" position-absolute" alt="...">
+                            <img src="/assets/img/project_thumbnail/<?= $project['thumbnailProject'] ?>" position-absolute" alt="...">
                         </div>
                     </div>
                     <div class="card-body konten">
                         <div class="px-4">
                             <span class="text-dark">
                                 <i class="bi bi-person-fill"></i>
-                                <strong> Jupriadi . </strong>
-                                <i class="text-secondary">02 Mey 2021</i>
+                                <strong> <?= $project['username'] ?> . </strong>
+                                <i class="text-secondary"><?= $project['tglUpdateProject'] ?></i>
                             </span><br><br>
 
-                            <h3><strong>Persiapan Pemrograman C# di Windows dengan Visual Studio</strong></h3><br>
-
-                            <small class="bg-light p-2 text-secondary me-3">#Vscode</small>
-                            <small class="bg-light p-2 text-secondary me-3">#Bahasa C</small>
-                            <small class="bg-light p-2 text-secondary me-3">#C++</small>
+                            <h3><strong><?= $project['judulProject'] ?></strong></h3><br>
+                           
+                            <small class=" p-2 text-secondary me-3"> <?= $project['kategoryProject'] ?></small>
                             <hr>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam voluptatum officiis excepturi officia nam, dolores suscipit voluptates sequi veniam omnis voluptate velit porro quisquam? Et laborum voluptate aperiam cumque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus facilis sint id non sapiente quaerat corrupti placeat, optio deserunt praesentium est dolore obcaecati saepe recusandae architecto similique minus? Et, temporibus?
+                               <?= $project['isiProject'] ?>
                             </p>
 
                            
@@ -75,9 +54,9 @@
                 </div> -->
             </div>
             <div class="col-md-4">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm position-sticky">
                     <div class="card-header">
-                        Artikel Populer
+                        Project Lainnya
                     </div>
                     <div class="card-body">
                         <?php for($i=1; $i<=3; $i++): ?>

@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="col-md-6 text-center d-none d-md-block position-relative">
-               <img src="/assets/svg/mountaincolor.png" class="w-50 position-absolute start-50  top-50 translate-middle mt-3 rounded-circle border border-5 border-light" alt="Ilustrasi Rinjani Dev" srcset="">
+               <img src="/assets/img/<?= $profil['logo'] ?>" class="w-50 position-absolute start-50  top-50 translate-middle mt-3 " alt="Ilustrasi Rinjani Dev" srcset="">
             </div>
         </div>
     </div>  
@@ -57,24 +57,24 @@
         <!-- list project terbaru -->
         <div class="row mt-5">
             <?php 
-            for($i=1;$i<=6;$i++): 
+                foreach($newproject as $project) :
             ?>
             <div class="col-md-4 mt-3">
-                <a href="/project">
-                    <div class="card shd rounded rounded-3">
+                <a href="/project/<?= $project['slugProject'] ?>">
+                    <div class="card shd rounded rounded-3 hg-100">
                         <div class="card-image position-relative m-3 rounded-3">
                             <img src="/assets/img/project_thumbnail/project.jpg" class="position-absolute top-50 start-50 translate-middle" alt="...">
                         </div>
                         <div class="card-body">
-                            <h6 class="card-title">Ini Adalah Contoh Project yang ke <?= $i ?></h6>
-                            <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h6 class="card-title"><?= $project['judulProject'] ?></h6>
+                            <p class="card-text text-secondary text-muted"><?= $project['isiProject'] ?></p>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                         </div>
                     </div>
                 </a>
             </div>
             <?php 
-                endfor; 
+                endforeach; 
             ?>
         </div>
     </div>

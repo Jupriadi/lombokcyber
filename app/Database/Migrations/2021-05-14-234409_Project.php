@@ -23,6 +23,9 @@ class Project extends Migration
 					'type'       => 'VARCHAR',
 					'constraint' => '100',
 			],
+			'slugProject'       => [
+					'type'       => 'TEXT'
+			],
 			'isiProject' => [
 					'type' => 'TEXT',
 			],
