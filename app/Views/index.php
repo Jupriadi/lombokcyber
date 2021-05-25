@@ -57,9 +57,9 @@
         <!-- list project terbaru -->
         <div class="row mt-5">
             <?php 
-                foreach($newproject as $project) :
+                foreach($newproject as $project):
             ?>
-            <div class="col-md-4 mt-3">
+            <div class="col-md-4 mt-2">
                 <a href="/project/<?= $project['slugProject'] ?>">
                     <div class="card shd rounded rounded-3 hg-100">
                         <div class="card-image position-relative m-3 rounded-3">
