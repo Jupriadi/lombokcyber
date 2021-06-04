@@ -17,7 +17,8 @@ class ProjectModels extends Model
 					'kategoryProject',
 					'thumbnailProject',
 					'tglPublishProject',
-					'tglUpdateProject'
+					'tglUpdateProject',
+					'jumlahDibacaProject',
 	];
 
 	// Dates
@@ -33,6 +34,10 @@ class ProjectModels extends Model
 		else:
 			return $this->join('users','users.id = project.penulisProject')->find($id);
 		endif;
+	}
+	public function getPopuler()
+	{
+		return $this->join('users','users.id = project.penulisProject')->orderBy('jumlahDibacaProject','DESC');
 	}
 	public function getBySlug($slug)
 	{

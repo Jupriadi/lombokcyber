@@ -8,14 +8,16 @@ class Controlkelas extends BaseController
 {
 	public function simpankelas($id=false)
 	{
+        // dd($id);
 		$data=[];
 		$posts = $this->request->getPost();
         $photo = $this->request->getFile('logo');
-
+        
+        $judul = $this->request->getPost('namaKelas');
+        $data['slugKelas'] = url_title($judul, '-', TRUE);
 		foreach($posts as $post => $value):
             $data[$post] = htmlspecialchars($value);
         endforeach;
-		// dd($data);
 
 		if(!($id == false)):
             $data['idKelas'] = $id;
@@ -41,6 +43,8 @@ class Controlkelas extends BaseController
             endif;
 
         endif;
+            
+        dd($data);
 
 		$simpan = $this->kelas->save($data);        
 		session()->setFlashdata('saved','Kelas Baru Berhasil Disimpan..!');

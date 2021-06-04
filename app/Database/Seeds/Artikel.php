@@ -10,10 +10,13 @@ class Artikel extends Seeder
 	{
 		$faker = \Faker\Factory::create('id_ID');
 		for($i=1;$i<=30;$i++):
-			$data = [
+			$judul = $faker->sentence(6);
+			$slug = url_title($judul, '-', TRUE);
 
-				'penulisArtikel'          => $faker->randomNumber(6, true),
-				'judulArtikel'       => $faker->sentence(6),
+			$data = [
+				'penulisArtikel'          => 1,
+				'judulArtikel'       => $judul,
+				'slugArtikel' => $slug,
 				'isiArtikel' => $faker->sentence(500),
 				'kategoryArtikel' => "#".$faker->word,
 				'thumbnailArtikel' => "artikel.jpg",

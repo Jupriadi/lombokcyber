@@ -11,6 +11,9 @@ class Controlartikel extends BaseController
 		$data=[];
 		$posts = $this->request->getPost();
         $photo = $this->request->getFile('thumbnail');
+        
+        $judul = $this->request->getPost('judulArtikel');
+        $data['slugArtikel'] = url_title($judul, '-', TRUE);
 		$data['isiArtikel']=$posts['isiArtikel'];
 		foreach($posts as $post => $value):
             if($post == 'isiArtikel')continue;
@@ -25,7 +28,7 @@ class Controlartikel extends BaseController
             else:
                 $namaphoto = $photo->getRandomName();
                 $data['thumbnailArtikel'] = $namaphoto;
-                if(!($find['thumbnailArtikel']=='artikel.png')):
+                if(!($find['thumbnailArtikel']=='artikel.jpg')):
                     unlink('assets/img/artikel_thumbnail/'.$find['thumbnailArtikel']);
                 endif;
                 $photo->move('assets/img/artikel_thumbnail/',$namaphoto);
@@ -33,7 +36,7 @@ class Controlartikel extends BaseController
 
         else:
             if($photo == ""):
-                $data['thumbnailArtikel'] = 'artikel.png';
+                $data['thumbnailArtikel'] = 'artikel.jpg';
             else:
                 $namaphoto = $photo->getRandomName();
                 $data['thumbnailArtikel'] = $namaphoto;
@@ -48,5 +51,18 @@ class Controlartikel extends BaseController
 		session()->setFlashdata('saved','Artikel Berhasil Disimpan..!');
 		return redirect()->to('/admin/artikel');
 
+	}
+
+    public function hapus($id)
+	{
+        $find = $this->artikel->find($id);
+        // dd($find);
+        if(!($find['thumbnailArtikel'] == 'artikel.jpg')){
+            unlink('assets/img/artikel_thumbnail/'.$find['thumbnailArtikel']);
+        }
+
+        $this->artikel->delete($id);
+        session()->setFlashdata('deleted','Artikel Berhasil Dihapus..!');
+        return redirect()->to('/admin/artikel');
 	}
 }

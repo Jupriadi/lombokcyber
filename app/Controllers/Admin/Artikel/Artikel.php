@@ -18,7 +18,7 @@ class Artikel extends BaseController
 		$data=[
 			'title' => 'Artikel',
 			'subtitle' => 'Data Artikel',
-			'artikel' => $getArtikel,
+			'artikel' => $getArtikel->paginate(9),
 			'pager' =>$this->artikel->pager,
 		];
 

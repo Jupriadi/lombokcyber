@@ -10,14 +10,16 @@ class KelasSeeder extends Seeder
 	{
 		$faker = \Faker\Factory::create('id_ID');
 		for($i=1;$i<=10;$i++):
-
+			$namakelas =  $faker->sentence(6);
+			$slug = url_title($namakelas, '-', TRUE);
 			$data =[
 				'idKelas' => $faker->randomNumber(5, true),
-				'namaKelas'  => $faker->sentence(6),
+				'namaKelas'  => $namakelas,
+				'slugKelas'	=> $slug,
 				'levelKelas'  => "Pemula",
 				'tentangKelas' => $faker->sentence(25),
 				'biaya' => $faker->randomNumber(6, true),
-				'mentor' => $faker->name(),
+				'mentor' => 1,
 				'thumbnailKelas' => 'kelas.jpg',
 				'tglBuatKelas' => date("Y-m-d"),
 				'tglUbahKelas' => date("Y-m-d"),			

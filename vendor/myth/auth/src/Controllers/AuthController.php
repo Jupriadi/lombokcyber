@@ -46,6 +46,7 @@ class AuthController extends Controller
 			unset($_SESSION['redirect_url']);
 
 			return redirect()->to($redirectURL);
+			// return redirect()->back();
 		}
 
         // Set a return URL if none is specified
@@ -84,7 +85,9 @@ class AuthController extends Controller
 		// Try to log them in...
 		if (! $this->auth->attempt([$type => $login, 'password' => $password], $remember))
 		{
-			return redirect()->back()->withInput()->with('error', $this->auth->error() ?? lang('Auth.badAttempt'));
+			session()->setFlashdata('errors_login','Username / Password Salah');
+			// return redirect()->back()->withInput()->with('errors_login', $this->auth->error() ?? lang('Auth.badAttempt'));
+			return redirect()->back()->withInput();
 		}
 
 		// Is the user being forced to reset their password?
@@ -96,7 +99,8 @@ class AuthController extends Controller
 		$redirectURL = session('redirect_url') ?? '/';
 		unset($_SESSION['redirect_url']);
 
-		return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));
+		return redirect()->back()->withCookies()->with('message', lang('Auth.loginSuccess'));
+		// return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));
 	}
 
 	/**

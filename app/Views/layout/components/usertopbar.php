@@ -12,10 +12,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Project</a>
+          <a class="nav-link" aria-current="page" href="/project">Project</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Artikel</a>
+          <a class="nav-link" aria-current="page" href="/artikel">Artikel</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,9 +30,27 @@
         <li class="nav-item">
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Freelancer</a>
         </li>
-        <li class="nav-item">
-          <!-- <button class="nav-link btn btn-light text-dark ms-md-4" aria-current="page" href="#login" class="tblogin">Login</button> -->
-        </li>
+        <?php if(logged_in()==TRUE): ?>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person"></i>
+              <?= user()->username; ?>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Profil</a></li>
+              <li><a class="dropdown-item" href="#">Area Member</a></li>
+              <hr>
+              <li><a href="/logout" class="dropdown-item">Keluar</a></li>
+            </ul>
+          </li>
+        <?php else: ?>
+          <li class="nav-item">
+            <a href="#login" data-bs-toggle="modal" class="nav-link btn btn-light text-dark ms-md-4" aria-current="page" href="#login" class="tblogin">Login</a>
+          </li>
+        
+        <?php endif; ?>
+        
+
         <li class="nav-item ms-md-4" data-bs-toggle="modal" data-bs-target="#cari">
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">
             <i class="bi bi-search"></i>

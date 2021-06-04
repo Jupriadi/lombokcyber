@@ -14,7 +14,7 @@ class ArtikelModel extends Model
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
 	protected $allowedFields        = [
-											'penulisArtikel','judulArtikel','isiArtikel','kategoryArtikel','thumbnailArtikel',
+											'penulisArtikel','judulArtikel','isiArtikel','kategoryArtikel','thumbnailArtikel','jumlahDibacaArtikel','slugArtikel',
 									];
 
 	// Dates
@@ -23,13 +23,18 @@ class ArtikelModel extends Model
 	protected $createdField         = 'tglPublishArtikel';
 	protected $updatedField         = 'tglUpdateArtikel';
 
-	public function getArtikel($id=false)
+	public function getArtikel($slug=false)
 	{
-		return $this->join('users','users.id = artikel.penulisArtikel')->orderBy('tglPublishArtikel', 'DESC')->paginate(8);
+		if(!$slug==false):
+			return $this->join('users','users.id = artikel.penulisArtikel')->where('slugArtikel', $slug);
+		endif;
+
+
+		return $this->join('users','users.id = artikel.penulisArtikel')->orderBy('tglPublishArtikel', 'DESC');
 	}
 	public function cariArtikel($key)
 	{
-		return $this->like('judulArtikel', $key)->paginate(8);
+		return $this->like('judulArtikel', $key);
 	}
 
 }

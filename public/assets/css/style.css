@@ -108,3 +108,8 @@ a:hover{
 .share div a:hover{
      background-color: rgb(146, 0, 80);
 }
+.paymentlogo-box{
+    height: 50px;
+    width:50px;
+    margin-top:6px;
+}

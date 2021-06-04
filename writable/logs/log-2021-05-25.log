@@ -1,0 +1,80 @@
+ERROR - 2021-05-25 21:44:48 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2021-05-25 21:44:48 --> Unable to connect to the database.
+#0 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Database\BaseConnection.php(618): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Model.php(247): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\BaseModel.php(624): CodeIgniter\Model->doFirst()
+#4 C:\Users\acer\Desktop\ci\learningmanagement\app\Controllers\Home.php(13): CodeIgniter\BaseModel->first()
+#5 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#6 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\acer\Desktop\ci\learningmanagement\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\acer\\D...')
+#10 {main}
+ERROR - 2021-05-25 21:45:17 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2021-05-25 21:45:17 --> Unable to connect to the database.
+#0 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Database\BaseConnection.php(618): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Model.php(247): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\BaseModel.php(624): CodeIgniter\Model->doFirst()
+#4 C:\Users\acer\Desktop\ci\learningmanagement\app\Controllers\Home.php(13): CodeIgniter\BaseModel->first()
+#5 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#6 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\acer\Desktop\ci\learningmanagement\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\acer\\D...')
+#10 {main}
+CRITICAL - 2021-05-25 22:59:45 --> Argument 1 passed to CodeIgniter\BaseModel::paginate() must be of the type int or null, string given, called in C:\Users\acer\Desktop\ci\learningmanagement\app\Controllers\Home.php on line 33
+#0 C:\Users\acer\Desktop\ci\learningmanagement\app\Controllers\Home.php(33): CodeIgniter\BaseModel->paginate('rem-doloribus-d...')
+#1 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(936): App\Controllers\Home->project('rem-doloribus-d...')
+#2 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\acer\Desktop\ci\learningmanagement\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\acer\\D...')
+#6 {main}
+CRITICAL - 2021-05-25 23:00:05 --> Argument 1 passed to CodeIgniter\BaseModel::paginate() must be of the type int or null, string given, called in C:\Users\acer\Desktop\ci\learningmanagement\app\Controllers\Home.php on line 33
+#0 C:\Users\acer\Desktop\ci\learningmanagement\app\Controllers\Home.php(33): CodeIgniter\BaseModel->paginate('dolorem-id-accu...')
+#1 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(936): App\Controllers\Home->project('dolorem-id-accu...')
+#2 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\acer\Desktop\ci\learningmanagement\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\acer\\D...')
+#6 {main}
+CRITICAL - 2021-05-25 23:01:22 --> Argument 1 passed to CodeIgniter\BaseModel::paginate() must be of the type int or null, string given, called in C:\Users\acer\Desktop\ci\learningmanagement\app\Controllers\Home.php on line 33
+#0 C:\Users\acer\Desktop\ci\learningmanagement\app\Controllers\Home.php(33): CodeIgniter\BaseModel->paginate('dolorem-id-accu...')
+#1 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(936): App\Controllers\Home->project('dolorem-id-accu...')
+#2 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\acer\Desktop\ci\learningmanagement\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\acer\\D...')
+#6 {main}
+CRITICAL - 2021-05-25 23:05:40 --> Undefined variable: i
+#0 C:\Users\acer\Desktop\ci\learningmanagement\app\Views\pages\user\project\detailproject.php(70): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\acer\\D...', 70, Array)
+#1 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\View\View.php(220): include('C:\\Users\\acer\\D...')
+#2 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Common.php(1217): CodeIgniter\View\View->render('/pages/user/pro...', Array, true)
+#4 C:\Users\acer\Desktop\ci\learningmanagement\app\Controllers\Home.php(35): view('/pages/user/pro...', Array)
+#5 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(936): App\Controllers\Home->project('dolorem-id-accu...')
+#6 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\acer\Desktop\ci\learningmanagement\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\acer\\D...')
+#10 {main}
+ERROR - 2021-05-25 23:49:33 --> mysqli_sql_exception: Disk full (C:\xampp\tmp\#sql131c_da_0.MAI); waiting for someone to free some space... (errno: 28 "No space left on device") in C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:314
+Stack trace:
+#0 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(314): mysqli->query('SELECT *\nFROM `...')
+#1 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Model.php(213): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\BaseModel.php(583): CodeIgniter\Model->doFindAll(3, 0)
+#6 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\BaseModel.php(1144): CodeIgniter\BaseModel->findAll(3, 0)
+#7 C:\Users\acer\Desktop\ci\learningmanagement\app\Controllers\Home.php(14): CodeIgniter\BaseModel->paginate(3)
+#8 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(936): App\Controllers\Home->index()
+#9 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\acer\Desktop\ci\learningmanagement\public\index.php(44): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\acer\Desktop\ci\learningmanagement\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\acer\\D...')
+#13 {main}

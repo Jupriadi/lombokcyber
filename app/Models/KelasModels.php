@@ -14,13 +14,13 @@ class KelasModels extends Model
 	protected $protectFields        = true;
 	protected $allowedFields        = [
 						'namaKelas',
+						'slugKelas',
 						'levelKelas',
 						'tentangKelas',
 						'biaya',
 						'mentor',
 						'thumbnailKelas',
 					];
-
 	// Dates
 	protected $useTimestamps        = true;
 	protected $dateFormat           = 'datetime';
@@ -36,6 +36,10 @@ class KelasModels extends Model
 			return $this->join('users','users.id = kelas.mentor')->orderBy('tglBuatKelas', 'DESC');
 		endif;
 	}
+	public function getBySlug($slug)
+	{
+		return $this->join('users','users.id = kelas.mentor')->where('slugKelas',$slug);
+	}
 
 	public function cariKelas($key)
 	{
@@ -45,5 +49,10 @@ class KelasModels extends Model
 	public function getMateri($idKelas)
 	{
 		return $this->join('materi','materi.idKelas = kelas.idKelas')->where('kelas.idKelas',$idKelas)->findAll();
+	}
+
+	public function getJumSiswa($id)
+	{
+		return $this->join('aktifsiswa','aktifsiswa.idKelas = kelas.idKelas')->get()->getNumRows();
 	}
 }

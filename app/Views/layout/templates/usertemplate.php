@@ -6,7 +6,7 @@
 <!-- footer -->
 <footer id="foot" style="z-index:1" class="position-relative p-5 bg-dark text-light">
     <div class="container">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-3">
                 <img src="/assets/svg/mountaincolor.png " class="w-50" alt="" srcset="">
             </div>
@@ -38,6 +38,15 @@
                 <div  class="my-3"><strong>Freelancer</strong></div>
                 <div  class="my-3"><strong>Freelancer</strong></div>
             </div>
+        </div> -->
+        <div class="text-center justify-content-center row">
+            <div class="col-md-3 col-7">
+                <img src="/assets/img/<?= $profil['logo'] ?>" class="w-100 " alt="Ilustrasi Rinjani Dev" srcset="">
+            </div>
+        </div>
+        <div class="mt-4 text-light text-center">
+            <strong>create with love by :</strong><br>
+            <a href="https://jupriadi.sembahulun.com" target="__blank" class="text-warning ">Jupriadi</a>
         </div>
     </div>
 </footer>

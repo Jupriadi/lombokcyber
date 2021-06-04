@@ -39,6 +39,9 @@
 
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/ckeditor/ckeditor.js"></script>
+    
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=266084840559222&autoLogAppEvents=1" nonce="H73tGJ4s"></script>
 </head>
 <body>
     <div id="app">

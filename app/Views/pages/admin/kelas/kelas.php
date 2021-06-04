@@ -154,7 +154,7 @@
 <script>
 $(".hapus").click(function(){
     const id = $(this).data('id');
-    $('#hapus').attr('href','controlkelas/hapus/'+id);
+    $('#hapus').attr('href','/admin/controlkelas/hapus/'+id);
     $('.text').html('Apakah Anda Yaking Akan Menghapus Kelas Bersama Semua Materi.?')
     // alert(id);
 })

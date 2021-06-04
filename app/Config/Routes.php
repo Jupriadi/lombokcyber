@@ -54,8 +54,11 @@ $routes->group('', ['namespace' => 'Myth\Auth\Controllers'], function($routes) {
 // route since we don't have to scan directories.
 // admin routes
 $routes->get('/', 'Home::index');
+$routes->get('/baca/(:any)', 'Home::artikel/$1');
+$routes->get('/kelas/(:any)', 'Home::kelas/$1');
+$routes->get('/project/(:any)', 'Home::project/$1');
 $routes->get('/admin', 'Admin\Admin::index');
-$routes->get('/(:any)', 'Home::$1');
+$routes->get('/memberarea', 'Admin\Admin::index');
 $routes->get('/admin/project', 'Admin\Project\Project::index');
 $routes->get('/admin/project/(:any)', 'Admin\Project\Project::$1');
 $routes->add('/admin/controlproject/(:any)','Admin\Project\Controlproject::$1');
@@ -72,6 +75,7 @@ $routes->add('/admin/controlartikel/(:any)','Admin\Artikel\Controlartikel::$1');
 $routes->get('/admin/akun', 'Admin\Akun\Akun::index');
 $routes->get('/admin/akun/(:any)', 'Admin\Akun\Akun::$1');
 $routes->add('/admin/controlakun/(:any)','Admin\Akun\Controlakun::$1');
+$routes->get('/(:segment)', 'Home::$1');
 
 
 // user routes

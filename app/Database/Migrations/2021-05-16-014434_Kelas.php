@@ -20,6 +20,10 @@ class Kelas extends Migration
 					'type'       => 'VARCHAR',
 					'constraint' => '255',
 			],
+			'slugKelas'  => [
+					'type'       => 'VARCHAR',
+					'constraint' => '255',
+			],
 			'levelKelas'  => [
 					'type'       => 'VARCHAR',
 					'constraint' => '50',
@@ -35,7 +39,7 @@ class Kelas extends Migration
 				'type'              => 'varchar',
                 'constraint'        => '50',
 			],
-			'thumbnailProject' => [
+			'thumbnailKelas' => [
 					'type' => 'VARCHAR',
 					'constraint' => '255'
 			],

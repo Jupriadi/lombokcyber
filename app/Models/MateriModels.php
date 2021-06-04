@@ -24,7 +24,9 @@ class MateriModels extends Model
 
 	public function getMateriByKelasId($idKelas)
 	{
-		return $this->join('kelas','kelas.idKelas = materi.idKelas')->join('modul','modul.idMateri = materi.idMateri')->where('kelas.idKelas',$idKelas)->findAll();
+		return $this->join('kelas','kelas.idKelas = materi.idKelas')
+					->where('kelas.idKelas',$idKelas)
+					->findAll();
 	}
 
 

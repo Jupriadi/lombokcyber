@@ -36,7 +36,7 @@ class BaseController extends Controller
 	 *
 	 * @var array
 	 */
-	protected $helpers = ['url'];
+	protected $helpers = ['url','auth'];
 	protected $project;
 	protected $profil;
 	protected $kelas;
@@ -45,7 +45,6 @@ class BaseController extends Controller
 	protected $modul;
 	protected $artikel;
 	protected $user;
-
 	public function __construct()
 	{
 		$this->project = new ProjectModels ;
@@ -57,7 +56,6 @@ class BaseController extends Controller
 		$this->artikel = new ArtikelModel ;
 		$this->user = new UserModels ;
 	}
-
 	/**
 	 * Constructor.
 	 *

@@ -7,7 +7,8 @@
 
 <div class="mb-3">
     <button data-toggle="modal" data-target="#tambahmateri" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Tambah Materi</button>
-    <button data-toggle="modal" data-target="#confirmhapus" class="hapuskelas btn btn-danger" data-id="<?= $kelas['idKelas'] ?>"><i class="bi bi-trash2-fill"></i> Hapus Kelas</button>
+    <button data-toggle="modal" data-target="#editKelas" class="hapuskelas btn btn-success" data-id="<?= $kelas['idKelas'] ?>"><i class="bi bi-pencil-fill"></i> Edit</button>
+    <button data-toggle="modal" data-target="#confirmhapus" class="hapuskelas btn btn-danger" data-id="<?= $kelas['idKelas'] ?>"><i class="bi bi-trash2-fill"></i> Hapus</button>
 </div>
 <div class="row">
     <div class="col-md-7 accordion" id="accordionExample" >
@@ -150,7 +151,75 @@
         </div>
     </div>
 </div>
-
+<!-- Modal -->
+<div class="modal fade" id="editKelas" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="py-3">
+                    <h3 class="text-center">Form Kelas</h3>
+                </div>
+                <div class="container-fluid">
+                    <form action="/admin/controlkelas/simpankelas/<?= $kelas['idKelas'] ?>" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-7">
+                           <div class="form-group">
+                               <label for="">Nama Kelas</label>
+                               <input name="namaKelas" value="<?= $kelas['namaKelas'] ?>" type="text" class="form-control">
+                           </div>
+                           <div class="form-group">
+                               <label for="">Tingkatan Kelas</label>
+                               <select class="form-select" name="levelKelas" id="">
+                                   <option value="<?= $kelas['levelKelas'] ?>"><?= $kelas['levelKelas'] ?></option>
+                                   <option value="beginer">beginer</option>
+                                   <option value="advance">advance</option>
+                                   <option value="expert">expert</option>
+                               </select>
+                           </div>
+                           <div class="form-group">
+                               <label for="">Tentang Kelas</label>
+                               <textarea name="tentangKelas" rows="4" class="form-control"><?= $kelas['tentangKelas'] ?></textarea>
+                           </div>
+                           <div class="form-group">
+                               <label for="">Mentor Kelas</label>
+                               <?php if(user()->status == "admin") : ?>
+                                    <select class="form-select" name="mentor" id="">
+                                        <option value="<?= $kelas['mentor'] ?>"><?= $kelas['username'] ?></option>
+                                        <?php foreach($members as $mentor): ?>
+                                            <option value="<?= $mentor['id'] ?>"><?= $mentor['username'] ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                               <?php else: ?>
+                                    <input type="text" value="<?= user()->username." - ".user()->email ?>" class="form-control rounded-pill" readonly>
+                                    <input name="mentor" value="<?= user()->id ?>" type="hidden">
+                               <?php endif; ?>
+                           </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="logo-box mx-auto" >
+                                <label for="logo" class="form-label logoLabel d-none"></label>
+                                <div class="fileUpload" width="80%;overflow:hidden;">
+                                    <input class="upload" style="height:100%" type="file" onchange="preview()" id="logo" name="logo">
+                                    <img src="/assets/img/kelas_thumbnail/<?= $kelas['thumbnailKelas'] ?>" class="img-thumbnail img-preview img-fluid" style="width:100%" alt="Logo">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Biaya</label>
+                                <input type="number" value="<?= $kelas['biaya'] ?>" class="form-control" name="biaya" placeholder="Rp.300.000" id="">
+                            </div>
+                            <div class="mt-4">
+                                <button class="btn btn-primary" type="submit" >Simpan</button>
+                                <a href="" class="ml-3" data-dismiss="modal">Batal</a>
+                            </div>
+                        </div>
+                   </div>
+                   </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     $('#exampleModal').on('show.bs.modal', event => {
         var button = $(event.relatedTarget);
@@ -168,14 +237,14 @@ $(".tambahmodul").click(function(){
 
 $(".hapuskelas").click(function(){
     const id = $(this).data('id');
-    $('#hapus').attr('href','controlkelas/hapus/'+id);
+    $('#hapus').attr('href','/admin/controlkelas/hapus/'+id);
     $('.text').html('Apakah Anda Yaking Akan Menghapus Kelas Bersama Semua Materi.?')
     // alert(id);
 })
 
 $(".hapusmateri").click(function(){
     const id = $(this).data('id');
-    $('#hapus').attr('href','controlmateri/hapus/'+id);
+    $('#hapus').attr('href','/admin/controlmateri/hapus/'+id);
     
     $('.text').html('<strong>Semua Modul Dalam Materi Ini Akan Ikut Terhapus</strong><br/>Apakah Anda Yakin Akan Menghapus Materi.?')
     // alert(id);

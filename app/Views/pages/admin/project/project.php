@@ -22,7 +22,7 @@
         <?php if($projects == null) : ?>
             <div class="text-center mt-5 py-5 bg-white">
                 <img src="/assets/img/empty.gif" style="width:150px" alt="">
-                <h3>Tidak Ada Project untuk Ditampilkan</h3>
+                <h3>Belum Ada Project untuk Ditampilkan</h3>
             </div>
         <?php endif; ?>
         <?php foreach($projects as $pro): ?>
