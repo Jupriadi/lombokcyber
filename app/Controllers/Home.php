@@ -70,8 +70,14 @@ class Home extends BaseController
 			$data['materi'] = $this->materi->getMateriByKelasId($findKelas['idKelas']);
 			$data['jumSiswa'] = $this->kelas->getJumSiswa($findKelas['idKelas']);
             return view('/pages/user/kelas/detailkelas',$data);
+		else:
+			$findKelas =$this->kelas->getBySlug($slug)->first();
+			$data['kelasbelajar']=$this->kelas->getKelas()->paginate(9);
+			$data['pager']=$this->kelas->pager;
+	
+			return view('/pages/user/kelas/index',$data);
         endif;
-		return view('/pages/user/kelas/index',$data);
+		
 	}
 	
 	public function artikel($slug=false)

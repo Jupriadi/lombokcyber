@@ -57,6 +57,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/baca/(:any)', 'Home::artikel/$1');
 $routes->get('/kelas/(:any)', 'Home::kelas/$1');
 $routes->get('/project/(:any)', 'Home::project/$1');
+$routes->get('/masukkelas/(:any)', 'User\Masukkelas::$1');
 $routes->get('/admin', 'Admin\Admin::index');
 $routes->get('/memberarea', 'Admin\Admin::index');
 $routes->get('/admin/project', 'Admin\Project\Project::index');

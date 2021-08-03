@@ -17,15 +17,11 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/artikel">Artikel</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-book-half"></i>
-            Program Belajar
+        <li class="nav-item ">
+          <a class="nav-link " href="/kelas" role="button" aria-expanded="false">
+            <!-- <i class="bi bi-book-half"></i> -->
+            Kelas Kursus
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Pemrograman</a></li>
-            <li><a class="dropdown-item" href="#">Desain UI UX</a></li>
-          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Freelancer</a>

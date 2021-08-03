@@ -127,7 +127,11 @@
                     </h3>
                     <hr>
                     <?php if(logged_in()==true): ?>
-                        <button data-bs-toggle="modal" data-bs-target="#ikutikelas" class="btn btn-lg text-light bg-primary form-control">Ikuti Kelas</button>
+                        <?php if($kelas['biaya']<1): ?>
+                            <a href="/masukkelas/geratis" class="btn btn-lg text-light bg-primary form-control">Masuk Kelas</a>
+                        <?php else : ?>
+                            <button data-bs-toggle="modal" data-bs-target="#ikutikelas" class="btn btn-lg text-light bg-primary form-control">Masuk Kelas</button>
+                        <?php endif; ?>
                     <?php else: ?>
                         
                         <button data-bs-toggle="modal" data-bs-target="#login" class="btn btn-lg text-light bg-primary form-control">Login Untuk Gabung</button>
